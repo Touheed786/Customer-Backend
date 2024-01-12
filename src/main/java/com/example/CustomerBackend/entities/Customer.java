@@ -2,15 +2,23 @@ package com.example.CustomerBackend.entities;
 
 import java.sql.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Customer {
 	
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String name;
 	private String email;
 	private Date dob;
 	private String occupation;
 	private String cust_group;
-	public Customer(int id, String name, String email, Date dob, String occupation, String cust_group) {
+	public Customer(Long id, String name, String email, Date dob, String occupation, String cust_group) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -19,10 +27,10 @@ public class Customer {
 		this.occupation = occupation;
 		this.cust_group = cust_group;
 	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getName() {
