@@ -6,4 +6,6 @@ import com.example.CustomerBackend.entities.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer,Long>{
 
+	Customer findByEmail(String email);
+
 }
