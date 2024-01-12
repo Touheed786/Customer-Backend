@@ -1,5 +1,7 @@
 package com.example.CustomerBackend.customerService;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +27,10 @@ public class CustomerService {
 	 public boolean isEmailUnique(String email) {
 	        return customerRepository.findByEmail(email) == null;
 	    }
+	 
+	 public List<Customer> getCustomers()
+	 {
+		 return customerRepository.findAll();
+	 }
 
 }

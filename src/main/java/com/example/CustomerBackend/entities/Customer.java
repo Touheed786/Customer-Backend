@@ -20,6 +20,12 @@ public class Customer {
 	private Date dob;
 	private String occupation;
 	private String cust_group;
+	
+	
+	
+	public Customer() {
+		super();
+	}
 	public Customer(Long id, String name, String email, Date dob, String occupation, String cust_group) {
 		super();
 		this.id = id;
